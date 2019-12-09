@@ -1,44 +1,26 @@
-//BasePlusCommissionEmployee.cpp
-#include <iostream>
-#include <stdexcept>
-#include "BasePlusCommissionEmployee.h"
+#ifndef BASEPLUSCOMMISSIONEMPLOYEE_H_INCLUDED
+#define BASEPLUSCOMMISSIONEMPLOYEE_H_INCLUDED
+
+//BasePlusCommissionEmployee.h
+#include <string> //C++ standard string class
+#include "CommissionEmployee.h"
 using namespace std;
 
-//constructor
-BasePlusCommissionEmployee::BasePlusCommissionEmployee(
-   const string &first, const string &last,
-   const string &ssn, double sales, double rate, double salary )
-   :CommissionEmployee(first, last, ssn, sales, rate)
+class BasePlusCommissionEmployee : public CommissionEmployee
 {
-    setBaseSalary(salary);//validate and store base salary
-}//end BasePlusCommissionEmployee constructor
+public:
+    BasePlusCommissionEmployee( const string &, const string &, const string &,
+                               double = 0.0, double = 0.0, double = 0.0 );
+    virtual ~BasePlusCommissionEmployee() {} //virtual destructor
 
-//set base salary
-void BasePlusCommissionEmployee::setBaseSalary( double salary )
-{
-    if(salary >= 0.0)
-        baseSalary = salary;
-    else
-        throw invalid_argument("Salary must be >= 0.0");
-}//end function setBaseSalary
+    void setBaseSalary( double ); //set base salary
+    double getBaseSalary() const; //return base salary
 
-//return base salary
-double BasePlusCommissionEmployee::getBaseSalary() const
-{
-    return baseSalary;
-}//end function getBaseSalary
+    //keyword virtual signals intent to override
+    virtual double earnings() const override; //calculate earnings
+    virtual void print() const override; //print object
+private:
+    double baseSalary; //base salary per week
+};//end class BasePlusCommissionEmployee
 
-//calculate earnings
-//override virtual function earnings in CommissionEmployee
-double BasePlusCommissionEmployee::earnings() const
-{
-    return getBaseSalary() + CommissionEmployee::earnings();
-}//end function earnings
-
-//print BasePlusCommissionEmployee's information
-void BasePlusCommissionEmployee::print() const
-{
-    cout << "base-salaried ";
-    CommissionEmployee::print(); //code reuse
-    cout << "; base salary: "<< getBaseSalary();
-}//end function print
+#endif // BASEPLUSCOMMISSIONEMPLOYEE_H_INCLUDED
