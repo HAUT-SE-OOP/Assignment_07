@@ -1,64 +1,29 @@
-//HourlyWorker.cpp
-#include <iostream>
-#include <stdexcept>
-#include "HourlyWorker.h"
+#ifndef HOURLYWORKER_H_INCLUDED
+#define HOURLYWORKER_H_INCLUDED
+
+//HourlyWorker.h
+#include <string>//C++ standard string class
+#include "Employee.h"
 using namespace std;
 
-//constructor
-HourlyWorker::HourlyWorker(
-   const string &first, const string &last, const string &ssn,
-   double wages, int hour)
-:Employee( first, last, ssn )
+class HourlyWorker: public Employee
 {
-    setWage(wages);
-    setHours(hour);
-}//end HourlyWorker constructor
+public:
+    HourlyWorker( const string &, const string &, const string &,
+                double = 0.0, int = 0 );
+    virtual ~HourlyWorker() {} // virtual destructor
 
-//set wage
-void HourlyWorker::setWage( double wages )
-{
-    if( wages >= 0.0)
-        wage = wages;
-    else
-        throw invalid_argument("Wage must be >= 0.0");
-}//end function setWage
+    void setWage( double ); //set wage
+    double getWage() const; //return wage
 
-//return wage
-double HourlyWorker::getWage() const
-{
-    return wage;
-}//end function getWage
+    void setHours( int ); //set hours
+    int getHours() const; //return hours
 
-//set pieces
-void HourlyWorker::setHours( int hour )
-{
-   if( hour >= 0)
-        hours = hour;
-    else
-        throw invalid_argument("Hours must be >= 0");
-}//end function setHours
+    virtual double earnings() const override;//calculate earnings
+    virtual void print() const override; //print object
+private:
+    double wage; //wage of per hour
+    int hours; // the amount of working hours
+};
 
-//return hours
-int HourlyWorker::getHours() const
-{
-    return hours;
-}//end function getHours
-
-double HourlyWorker::earnings() const
-{
-    if( getHours()<=40 )
-    {
-        return getWage() * getHours();
-    }else
-    {
-        return 1.5 * getWage() * getHours();
-    }
-
-}//end function earnings
-
-void HourlyWorker::print() const
-{
-    cout << "hourly worker: ";
-    Employee::print(); //code reuse
-    cout << "\nWage: " << getWage() << "; Hours: " << getHours();
-}//end function print
+#endif // HOURLYWORKER_H_INCLUDED
