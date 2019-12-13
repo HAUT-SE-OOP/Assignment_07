@@ -51,7 +51,14 @@ double CommissionEmployee::getTotal()
 
 void CommissionEmployee::earnings()
 {
-    cout << "The commission worker's earning is: " << endl;
+    cout << "\nThe commission worker's earning is: " << endl;
     cout << getGrossSales() * getCommissionRate() << endl;
 }
 //function to show earnings
+
+void CommissionEmployee::print()
+{
+    cout << getFirstName() << ' ' << getLastName()
+    << "\nSocial security number: " << getSocialSecurityNumber();
+    CommissionEmployee::earnings();
+}
