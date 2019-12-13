@@ -19,6 +19,7 @@ public:
     double getHours( );//function to get hours
 
     virtual void earnings();
+    virtual void print();
 private:
     double Wage;
     double Hours;
