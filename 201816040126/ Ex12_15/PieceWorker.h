@@ -21,6 +21,7 @@ public:
     double getPieces();//function to get pieces
 
     virtual void earnings();
+    virtual void print();
 };
 #endif // PIECEWORKER_H_INCLUDED
 
