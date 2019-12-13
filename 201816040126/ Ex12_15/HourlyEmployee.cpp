@@ -50,7 +50,14 @@ double HourlyEmployee::getHours( )
 
 void HourlyEmployee::earnings()
 {
-    cout << "The hourly employee's earnings is: " << endl;
+    cout << "\nThe hourly employee's earnings is: " << endl;
     cout << getWage() * getHours() << endl;
 }
 //function to show earnings
+
+void HourlyEmployee::print()
+{
+    cout << getFirstName() << ' ' << getLastName()
+    << "\nSocial security number: " << getSocialSecurityNumber();
+    HourlyEmployee::earnings();
+}
