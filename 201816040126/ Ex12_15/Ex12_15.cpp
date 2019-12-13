@@ -27,8 +27,8 @@ int main()
 
     for(size_t i = 0; i < Employee.size() ; i++ )
     {
-        Employee[i]->earnings();
-        cout << "\n\n" << endl;
+        Employee[i]->print();
+        cout << "\n" << endl;
     }
 
     return 0;
