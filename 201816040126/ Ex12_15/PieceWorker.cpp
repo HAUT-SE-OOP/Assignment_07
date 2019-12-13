@@ -45,7 +45,14 @@ double PieceWorker::getPieces( )
 
 void PieceWorker::earnings()
 {
-    cout << "The piece worker's earning is: " << endl;
+    cout << "\nThe piece worker's earning is: " << endl;
     cout << getWage() * getPieces() << endl;
 }
 //function to show earnings
+
+void PieceWorker::print()
+{
+    cout << getFirstName() << ' ' << getLastName()
+    << "\nSocial security number: " << getSocialSecurityNumber();
+    PieceWorker::earnings();
+}
