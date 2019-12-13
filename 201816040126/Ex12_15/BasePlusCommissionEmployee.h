@@ -15,6 +15,7 @@ public:
     double getSalary();
 
     virtual void earnings();
+    virtual void print();
 private:
     double Salary;
 };
