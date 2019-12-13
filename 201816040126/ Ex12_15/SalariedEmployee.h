@@ -18,6 +18,7 @@ public:
     double getWeeklySalary();
 
     virtual void earnings();
+    virtual void print();
 
 };
 
