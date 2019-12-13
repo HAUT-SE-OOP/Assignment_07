@@ -1,3 +1,4 @@
+
 #ifndef COMMISSIONEMPLOYEE_H_INCLUDED
 #define COMMISSIONEMPLOYEE_H_INCLUDED
 
@@ -25,6 +26,7 @@ public:
     double getTotal();
 
     virtual void earnings();
+    virtual void print();
 
 };
 #endif // COMMISSIONEMPLOYEE_H_INCLUDED
