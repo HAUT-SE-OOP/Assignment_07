@@ -5,7 +5,7 @@ using namespace std;
 
 Employee::Employee( const string &first, const string &last,
                    const string &ssn )
-        :FirstName( first ),LastName( last ), SocialSecourityNumber( ssn )
+        :FirstName( first ),LastName( last ), SocialSecurityNumber( ssn )
         {
         }
 
@@ -29,12 +29,18 @@ string Employee::getLastName() const
     return LastName;
 }
 
-void Employee::setSocialSecourityNumber( const string & ssn )
+void Employee::setSocialSecurityNumber( const string & ssn )
 {
-    SocialSecourityNumber = ssn;
+    SocialSecurityNumber = ssn;
 }
 
-string Employee::getSocialSecourityNumber() const
+string Employee::getSocialSecurityNumber() const
 {
-    return SocialSecourityNumber;
+    return SocialSecurityNumber;
+}
+
+void Employee::print()
+{
+    cout << getFirstName() << ' ' << getLastName()
+    << "\nSocial security number: " << getSocialSecurityNumber();
 }
