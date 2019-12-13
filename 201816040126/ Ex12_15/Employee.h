@@ -11,12 +11,12 @@ class Employee
 private:
     string FirstName;
     string LastName;
-    string SocialSecourityNumber;
+    string SocialSecurityNumber;
 public:
     Employee( const string &, const string &,
                    const string & );
-    void setSocialSecourityNumber( const string &  );
-    string getSocialSecourityNumber() const;
+    void setSocialSecurityNumber( const string &  );
+    string getSocialSecurityNumber() const;
 
     void setLastName( const string &  );
     string getLastName() const;
@@ -25,6 +25,7 @@ public:
     string getFirstName() const ;
 
     virtual void earnings() = 0;
+    virtual void print();
 
 };
 #endif // EMPLOYEE_H_INCLUDED
