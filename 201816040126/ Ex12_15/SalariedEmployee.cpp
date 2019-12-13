@@ -27,7 +27,14 @@ double SalariedEmployee::getWeeklySalary()
 
 void SalariedEmployee::earnings()
 {
-    cout << "The salaried worker's earning is: " << endl;
+    cout << "\nThe salaried worker's earning is: " << endl;
     cout << getWeeklySalary() << endl;
 }
 //function to show earnings
+
+void SalariedEmployee::print()
+{
+    cout << getFirstName() << ' ' << getLastName()
+    << "\nSocial security number: " << getSocialSecurityNumber();
+    SalariedEmployee::earnings();
+}
