@@ -26,9 +26,16 @@ double BasePlusCommissionEmployee::getSalary()
 }
 //function to get salary
 
+void BasePlusCommissionEmployee::print()
+{
+    cout << getFirstName() << ' ' << getLastName()
+    << "\nSocial security number: " << getSocialSecurityNumber();
+    BasePlusCommissionEmployee::earnings();
+}
+
 void BasePlusCommissionEmployee::earnings()
 {
-    cout << "The base plus commission worker's earning is: " << endl;
+    cout << "\nThe base plus commission worker's earning is: " << endl;
     cout << getSalary() + CommissionEmployee::getTotal() << endl;
 }
 //function to show earnings
