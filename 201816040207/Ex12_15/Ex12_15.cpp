@@ -7,6 +7,9 @@
 #include"BasePlusCommissionEmployee.h"
 #include"HourlyEmployee.h"
 #include"PieceWorker.h"
+
+
+
 using namespace std;
 
 void virtualViaPointer ( const Employee * const ) ;
