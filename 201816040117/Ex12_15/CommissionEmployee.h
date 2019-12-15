@@ -1,5 +1,4 @@
-// Lab 2: CommissionEmployee.h
-// CommissionEmployee class definition represents a commission employee.
+
 #ifndef COMMISSION_H
 #define COMMISSION_H
 
