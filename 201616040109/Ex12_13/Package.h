@@ -46,7 +46,7 @@ public:
     void setFee(double);//set charge
     double getFee()const;//return  charge
 
-    virtual double calculateCost();//return calculateCost
+    virtual double calculateCost()const;//return calculateCost
     virtual void print()const;//print Package object
 private:
     string sender;
