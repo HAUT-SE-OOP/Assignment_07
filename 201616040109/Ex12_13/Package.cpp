@@ -146,7 +146,7 @@ double Package::getFee() const
     return fee;
 }
 //return calculateCost
-double Package::calculateCost()
+double Package::calculateCost() const
 {
     return getWeight()*getFee();
 }
