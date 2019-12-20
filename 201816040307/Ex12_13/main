@@ -1,0 +1,28 @@
+#include"Package.h"
+#include "OvernightPackage.h"
+#include "TwoDayPackage.h"
+#include<vector>
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    vector<Package*> ptr(2);
+    OvernightPackage onp(1, "Janny", "China", "Beijing", "Beijing", "123-123", 1, 1);
+    TwoDayPackage tdp(1, "Danny", "US", "NewYork", "NewYork", "345-324", 1, 1);
+
+    ptr[0] = &onp;
+    ptr[1] = &tdp;
+
+    double sum = 0;
+    for(size_t i = 0; i < 2; ++i)
+    {
+        string str = ptr[i]->getAddress();
+        cout<<str<<endl;
+
+        double a = ptr[i]->calculateCost();
+        sum += a;
+    }
+    cout<<"Fee: "<<sum<<endl;
+}
